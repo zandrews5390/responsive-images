@@ -4,14 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Responsive Images Examples</title>
-    <!-- TO DO: Add your name to the meta author tag -->
-    <meta name="author" content="">
+    <meta name="author" content="Zach Andrews">
     <meta name="description" content="Code examples showing how to add responsive images to a website for art direction or for resolution switching">
 
     <link rel="stylesheet" href="styles.css">
 
-    <!-- TO DO: Add the picturefill code here -->
-    
+    <script>
+        // Picture element HTML5 shiv
+        document.createElement( "picture" );
+      </script>
+      <script src="picturefill.min.js" async></script>
 </head>
 
 <body id="top">
@@ -24,15 +26,27 @@
             <h2>Responsive Images for Art Direction</h2>
 
 
-            <!-- TO DO: Add the responsive images for art direction here -->
-
+            <picture>
+                <source media="(max-width: 600px)" width="485" height="273" srcset="images/art-direction-sm.png">
+                <source media="(max-width: 999px)" width="768" height="410" srcset="images/art-direction-med.png">
+                <source media="(min-width: 1000px)" width="440" height="810" srcset="images/art-direction-lg.jpg">
+                <img src="images/art-direction-lg.jpg" alt="" width="1440" height="810">
+            </picture>
         </section>
 
         <section>
             <h2>Responsive Images for Resolution Switching</h2>
 
-            <!-- TO DO: Add the responsive images for resolution switching here -->
-
+            <img srcset="images/resolution-switching-sm.png 300w,
+                        images/resolution-switching-med.png 500w,
+                        images/resolution-switching-lg.jpg 800w"
+                    sizes="(max-width: 450px) 300px,
+                            (max-width: 699px) 500px,
+                            (min-width: 700px) 800px"
+                    src="images/resolution-switching-sm.png" 
+                    alt="A dark gray backpack with brown leather accents and a top handle" 
+                    width="300" 
+                    height="300">
         </section>
     </main>
 
